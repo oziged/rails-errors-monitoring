@@ -60,7 +60,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  Raygun.setup do |config|
-    config.api_key = "SxnpCNVhk1BoNn9csQ3ZA"
-  end
+  # Raygun.setup do |config|
+  #   config.api_key = "SxnpCNVhk1BoNn9csQ3ZA"
+  # end
 end

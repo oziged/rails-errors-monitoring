@@ -1,6 +1,10 @@
 require_relative 'boot'
 
 require 'rails/all'
+require 'raygun4ruby'
+Raygun.setup do |config|
+  config.api_key = "SxnpCNVhk1BoNn9csQ3ZA"
+end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

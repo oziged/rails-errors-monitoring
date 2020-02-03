@@ -110,7 +110,7 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  Raygun.setup do |config|
-    config.api_key = "SxnpCNVhk1BoNn9csQ3ZA"
-  end
+  # Raygun.setup do |config|
+  #   config.api_key = "SxnpCNVhk1BoNn9csQ3ZA"
+  # end
 end
