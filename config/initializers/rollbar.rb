@@ -35,17 +35,16 @@ Rollbar.configure do |config|
   # config.exception_level_filters.merge!('MyCriticalException' => lambda { puts 'ERROr' * 1000 })
   # config.exception_level_filters.merge!('MyCriticalException' => lambda { |e| 'critical' })
 
-  config.use_async = true
-  config.async_handler = Proc.new { |payload|
-    Thread.new { 
-      notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
-        defaults channel: "#random",
-                  username: "notifier"
-      end
-      notifier.ping "Error in #{payload['data'][:context]}"
-    }
-
-}
+  # config.use_async = true
+  # config.async_handler = Proc.new { |payload|
+  #   Thread.new { 
+  #     notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
+  #       defaults channel: "#random",
+  #                 username: "notifier"
+  #     end
+  #     notifier.ping "Error in #{payload['data'][:context]}"
+  #   }
+  # }
 
   # Enable asynchronous reporting (uses girl_friday or Threading if girl_friday
   # is not installed)
