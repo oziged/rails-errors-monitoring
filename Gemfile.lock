@@ -77,6 +77,9 @@ GEM
     concurrent-ruby (1.1.5)
     crass (1.0.6)
     erubi (1.9.0)
+    exception_notification (4.4.0)
+      actionmailer (>= 4.0, < 7)
+      activesupport (>= 4.0, < 7)
     faraday (0.17.3)
       multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
@@ -178,6 +181,7 @@ GEM
       rubyzip (>= 1.2.2)
     sentry-raven (2.13.0)
       faraday (>= 0.7.6, < 1.0)
+    slack-notifier (2.3.2)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -225,6 +229,7 @@ DEPENDENCIES
   bugsnag
   byebug
   capybara (>= 2.15)
+  exception_notification
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
@@ -235,6 +240,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   sentry-raven
+  slack-notifier
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

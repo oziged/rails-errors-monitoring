@@ -16,6 +16,8 @@ Bugsnag.configure do |config|
   config.app_version = '1.3.0'
 end
 
+
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

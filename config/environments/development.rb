@@ -63,4 +63,14 @@ Rails.application.configure do
   # Raygun.setup do |config|
   #   config.api_key = "SxnpCNVhk1BoNn9csQ3ZA"
   # end
+
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+                                        slack: {
+                                          webhook_url: 'https://hooks.slack.com/services/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',
+                                          channel: '#random',
+                                          additional_parameters: {
+                                            icon_url: 'http://image.jpg',
+                                            mrkdwn: true
+                                          },
+                                        }
 end
