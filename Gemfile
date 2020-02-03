@@ -5,6 +5,7 @@ ruby '2.6.3'
 gem 'raygun4ruby'
 gem 'sentry-raven'
 gem 'bugsnag'
+gem 'rollbar'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use postgresql as the database for Active Record

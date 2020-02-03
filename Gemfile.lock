@@ -160,6 +160,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.6.0)
+    rollbar (2.23.2)
     ruby_dep (1.5.0)
     rubyzip (2.2.0)
     sass-rails (6.0.0)
@@ -230,6 +231,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)
   raygun4ruby
+  rollbar
   sass-rails (>= 6)
   selenium-webdriver
   sentry-raven
