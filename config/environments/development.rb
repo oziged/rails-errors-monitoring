@@ -66,7 +66,7 @@ Rails.application.configure do
 
   Rails.application.config.middleware.use ExceptionNotification::Rack,
                                         slack: {
-                                          webhook_url: 'https://hooks.slack.com/services/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',
+                                          webhook_url: 'https://hooks.slack.com/services/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',
                                           channel: '#random',
                                           additional_parameters: {
                                             icon_url: 'http://image.jpg',

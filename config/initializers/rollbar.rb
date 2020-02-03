@@ -38,7 +38,7 @@ Rollbar.configure do |config|
   # config.use_async = true
   # config.async_handler = Proc.new { |payload|
   #   Thread.new { 
-  #     notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
+  #     notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
   #       defaults channel: "#random",
   #                 username: "notifier"
   #     end
