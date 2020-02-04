@@ -6,4 +6,8 @@ class TestController < ApplicationController
       end
     end
   end
+
+  def qwerty
+    raise StandardError.new "StandartError"
+  end
 end

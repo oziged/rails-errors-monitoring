@@ -2,8 +2,17 @@ Rollbar.configure do |config|
   # Without configuration, Rollbar is enabled in all environments.
   # To disable in specific environments, set config.enabled=false.
 
-  config.access_token = '4fc48c46c1244f4480c8e4fbeeb99ea3'
+  handler = proc do |options|
+    notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
+                defaults channel: "#rails-errors",
+                username: "notifier"
+                end
+    notifier.ping "There is some error in your app, please check Rollbar panel!"
+  end
 
+  config.access_token = '4fc48c46c1244f4480c8e4fbeeb99ea3'
+  config.before_process = handler
+  
   # Here we'll disable in 'test':
   if Rails.env.test?
     config.enabled = false
@@ -33,17 +42,17 @@ Rollbar.configure do |config|
   #
   # You can also specify a callable, which will be called with the exception instance.
   # config.exception_level_filters.merge!('MyCriticalException' => lambda { puts 'ERROr' * 1000 })
-  # config.exception_level_filters.merge!('MyCriticalException' => lambda { |e| 'critical' })
+  # config.exception_level_filters.merge!('MyCriticalException' => lambda { puts '23' })
 
   # config.use_async = true
   # config.async_handler = Proc.new { |payload|
-  #   Thread.new { 
-  #     notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
-  #       defaults channel: "#random",
-  #                 username: "notifier"
-  #     end
-  #     notifier.ping "Error in #{payload['data'][:context]}"
-  #   }
+    # Thread.new { 
+    #   notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
+    #     defaults channel: "#random",
+    #               username: "notifier"
+    #   end
+    #   notifier.ping "Error in #{payload['data'][:context]}"
+    # }
   # }
 
   # Enable asynchronous reporting (uses girl_friday or Threading if girl_friday
@@ -73,6 +82,10 @@ Rollbar.configure do |config|
   #   user: 'username_if_auth_required',
   #   password: 'password_if_auth_required'
   # }
+
+  config.hook :on_error_response do |response|
+    puts '123' * 100000
+  end
 
   # If you run your staging application instance in production environment then
   # you'll want to override the environment reported by `Rails.env` with an
